@@ -1,6 +1,6 @@
 package com.daw.persistence.entities;
 
-import java.sql.Date;
+
 import java.time.LocalDateTime;
 
 import com.daw.persistence.entities.enums.Tipo;
@@ -28,7 +28,7 @@ public class Juego {
 	private Double precio;
 	private Integer descargas;
 	
-	@Column(name = "fecha_vencimiento")
+	@Column(name = "fecha_lanzamiento")
 	private LocalDateTime fechaLanzamiento;
 	
 	@Column (name = "tipo")
@@ -37,6 +37,86 @@ public class Juego {
 	
 	@Column (name = "completado")
 	private Boolean completado;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getCompania() {
+		return compania;
+	}
+
+	public void setCompania(String compania) {
+		this.compania = compania;
+	}
+
+	public String getPlataforma() {
+		return plataforma;
+	}
+
+	public void setPlataforma(String plataforma) {
+		this.plataforma = plataforma;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Integer getDescargas() {
+		return descargas;
+	}
+
+	public void setDescargas(Integer descargas) {
+		this.descargas = descargas;
+	}
+
+	public LocalDateTime getFechaLanzamiento() {
+		return fechaLanzamiento;
+	}
+
+	public void setFechaLanzamiento(LocalDateTime fechaLanzamiento) {
+		this.fechaLanzamiento = fechaLanzamiento;
+	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
+	public Boolean getCompletado() {
+		return completado;
+	}
+
+	public void setCompletado(Boolean completado) {
+		this.completado = completado;
+	}
 	
 	
 	
