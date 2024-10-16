@@ -80,7 +80,35 @@ public class JuegoController {
 		return ResponseEntity.ok(this.juegoService.getByPrecio(min, max));
 	}
 	
+	@PutMapping("/completar/{idJuego}")
+	public ResponseEntity<Juego> completarJuego(@PathVariable("idJuego")int idJuego){
+		if(this.juegoService.getJuego(idJuego).isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		if(this.juegoService.completarJuego(idJuego)) {
+			return ResponseEntity.ok().build();
+		}
+		else {
+			return ResponseEntity.badRequest().build();
+		}
 	
+		
+	}
+	
+	@PutMapping("/descompletar/{idJuego}")
+	public ResponseEntity<Juego> descompletarJuego(@PathVariable("idJuego") int idJuego){
+		if(this.juegoService.getJuego(idJuego).isEmpty()) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		if(this.juegoService.descompletar(idJuego)) {
+			return ResponseEntity.ok().build();
+		}
+		else {
+			return ResponseEntity.badRequest().build();
+		}
+	}
 	
 	
 	

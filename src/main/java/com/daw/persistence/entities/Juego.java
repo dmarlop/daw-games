@@ -42,8 +42,8 @@ public class Juego {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer idJuego) {
+		this.id = idJuego;
 	}
 
 	public String getNombre() {

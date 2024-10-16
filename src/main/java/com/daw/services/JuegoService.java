@@ -49,4 +49,27 @@ public class JuegoService  {
 		return this.juegoCrudRepository.findByPrecioBetween(min, max);
 	}
 	
+	public boolean completarJuego(int id) {		
+		if(this.getJuego(id).isPresent()) {
+			Juego juego = this.getJuego(id).get();
+			if(!juego.getCompletado()) {
+				juego.setCompletado(true);
+				this.juegoCrudRepository.save(juego);
+				return true;
+			}
+		}
+		return false;
+}
+		
+	public boolean descompletar(int id) {
+		if(this.getJuego(id).isPresent()) {
+			Juego juego = this.getJuego(id).get();
+			if(juego.getCompletado()) {
+				juego.setCompletado(false);
+				this.juegoCrudRepository.save(juego);
+				return true;
+			}
+		}
+		return false;
+	}
 }
